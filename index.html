@@ -352,45 +352,92 @@
     /* ── PROJECTS ── */
     .project-card {
       border: 1px solid var(--line);
-      padding: 2.5rem;
+      padding: 2rem 2.5rem;
       background: var(--surface);
       border-radius: 2px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
       gap: 1rem;
       position: relative;
       overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .project-card:hover {
+      border-color: rgba(181,245,66,0.25);
+      transform: translateY(-3px);
     }
     .project-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(181,245,66,0.03), transparent 60%);
+      background: linear-gradient(135deg, rgba(181,245,66,0.04), transparent 60%);
+      pointer-events: none;
     }
-    .project-icon { font-size: 2rem; opacity: 0.3; }
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .project-icon { font-size: 1.6rem; }
+    .project-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--line);
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .project-link:hover {
+      color: var(--accent);
+      border-color: rgba(181,245,66,0.4);
+    }
     .project-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      color: var(--muted);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--ink);
     }
     .project-desc {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.08em;
+      font-size: 0.88rem;
+      color: rgba(238,234,227,0.55);
+      line-height: 1.7;
     }
-    .project-badge {
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+    .project-tag {
       font-family: 'DM Mono', monospace;
       font-size: 0.65rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.35rem 0.8rem;
-      border: 1px solid rgba(181,245,66,0.3);
+      padding: 0.25rem 0.65rem;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      border-radius: 2px;
+    }
+    .project-tag.highlight {
+      border-color: rgba(181,245,66,0.3);
       color: var(--accent);
-      border-radius: 100px;
+    }
+    .project-role {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--line);
+    }
+    .project-role span {
+      color: var(--accent);
     }
 
     /* ── CONTACT ── */
@@ -582,10 +629,25 @@
         <div class="section-line"></div>
       </div>
       <div class="project-card reveal">
-        <div class="project-icon">🛠️</div>
-        <p class="project-title">Projetos em construção...</p>
-        <p class="project-desc">Em breve novidades por aqui. Acompanhe!</p>
-        <span class="project-badge">⟶ em breve</span>
+        <div class="project-top">
+          <div class="project-icon">👗</div>
+          <a href="https://github.com/Juninho202/Loja-Cartalog-de-roupas" target="_blank" class="project-link">
+            Ver no GitHub ↗
+          </a>
+        </div>
+        <p class="project-title">Loja — Catálogo de Roupas</p>
+        <p class="project-desc">
+          Catálogo digital de roupas com navegação fluida e interface moderna.
+          Responsável pelo visual completo e toda a interatividade da aplicação.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag highlight">CSS</span>
+          <span class="project-tag highlight">JavaScript</span>
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">Layout</span>
+          <span class="project-tag">Responsivo</span>
+        </div>
+        <p class="project-role">// minha contribuição: <span>CSS, layout e JavaScript completo</span></p>
       </div>
     </section>
 
